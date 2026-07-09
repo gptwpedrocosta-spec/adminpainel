@@ -1,0 +1,6 @@
+{
+  "name": "MotoJá Admin",
+  "description": "Painel administrativo moderno e completo para gerenciamento de clientes, motoristas, corridas, entregas e finanças.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

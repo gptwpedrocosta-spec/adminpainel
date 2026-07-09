@@ -1,0 +1,40 @@
+{
+  "entities": {
+    "Admin": {
+      "title": "Admin",
+      "description": "System administrator or support staff profiles.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "role": { "type": "string", "enum": ["super_admin", "admin", "support"] },
+        "status": { "type": "string", "enum": ["active", "inactive"] },
+        "active": { "type": "boolean" },
+        "permissions": { "type": "array" }
+      },
+      "required": ["id", "name", "email", "role", "status"]
+    },
+    "User": {
+      "title": "User",
+      "description": "MotoJá client profile.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "status": { "type": "string", "enum": ["active", "inactive"] }
+      }
+    }
+  },
+  "firestore": {
+    "admins/{uid}": {
+      "schema": "Admin",
+      "description": "Administrator and operator profiles."
+    },
+    "users/{userId}": {
+      "schema": "User",
+      "description": "Client user profiles."
+    }
+  }
+}
